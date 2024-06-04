@@ -31,7 +31,7 @@ Overall, the TriGram model exhibited the highest accuracy, highlighting the impo
 ## Predictions on Unseen Reviews
 Sentiment prediction is demonstrated on three example sentences using a trained model. The sentences are tokenized into integer sequences using the same tokenizer used during training. The best-trained model, utilizing a 3-gram approach, is loaded for prediction. Predictions are made on the tokenized sequences, resulting in probability scores for positive and negative sentiment classes. A threshold of 0.5 is applied to convert the probability scores into binary classes: values above the threshold are classified as positive sentiment (1), while values below or equal to the threshold are classified as negative sentiment (0).
 
-## Data Sources:
+## Data Source:
 https://ai.stanford.edu/~amaas/data/sentiment/aclImdb_v1.tar.gz
 
 ## License:
