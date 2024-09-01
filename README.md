@@ -1,7 +1,23 @@
-# Sentiment Analysis using various Bag-of-Words and Sequence to Sequence Models
+# Sentiment Analysis using Deep Learning and Machine Learning
 
 ## Project Overview
-This project contains a comprehensive sentiment analysis on the IMDB movie reviews dataset. It employs various machine learning techniques, including both Bag of Words models and Sequence to Sequence models, to classify movie reviews as positive or negative. The Bag of Words models implemented include a Unigram model, which considers individual words as features; a Bigram model, which considers pairs of consecutive words; a Trigram model, which considers triplets of consecutive words; and a Bigram model enhanced with TF-IDF (term frequency-inverse document frequency). The Sequence to Sequence models encompass several approaches: one-hot encoded vectors, which provide a simple representation of words; word embeddings and pretrained embeddings using GloVe (Global Vectors for Word Representation); and transformers with positional embeddings, which represent state-of-the-art techniques in natural language processing. Additionally, a comparison of the accuracy of these models on test data is conducted and assessed, providing insights into their performance and effectiveness in sentiment classification. This diverse set of models allows for a thorough exploration of sentiment analysis on the IMDB dataset.
+This project offers a comprehensive sentiment analysis of the IMDB movie reviews dataset, utilizing a range of deep learning and machine learning techniques. It includes both Bag of Words models and Sequence-to-Sequence models, alongside machine learning approaches like Multinomial Naive Bayes (MultinomialNB) with CountVectorizer and TF-IDF for classifying movie reviews as positive or negative.
+
+The Bag of Words models implemented include:
+
+- A Unigram model, which uses individual words as features.
+- A Bigram model, which considers pairs of consecutive words.
+- A Trigram model, which considers triplets of consecutive words.
+- A Bigram model enhanced with TF-IDF (Term Frequency-Inverse Document Frequency).
+
+The Sequence-to-Sequence models cover several methods:
+
+- One-hot encoded vectors, a simple word representation.
+- Word embeddings and pre-trained embeddings using GloVe (Global Vectors for Word Representation).
+- Transformers with positional embeddings, representing state-of-the-art techniques in natural language processing.
+- MultinomialNB is applied using both CountVectorizer and TF-IDF as feature extraction techniques.
+
+The project also compares the accuracy of these models on test data, providing valuable insights into their performance and effectiveness in sentiment classification. This diverse set of models enables a thorough exploration of sentiment analysis on the IMDB dataset.
 
 ## Top 100 words by Frequency
 
@@ -25,8 +41,13 @@ Four distinct Sequence-to-Sequence models are implemented, each showcasing diffe
 - Pretrained GloVe Embeddings Models leverage pretrained embeddings to enhance the representation of input tokens. They showcase improved performance of 87.8% and reduced training time compared to models with randomly initialized embeddings.
 - The Transformer Model with Positional Embedding showcases the effectiveness of attention mechanisms in capturing long-range dependencies and contextual information. The performance is 87.1%.
 
+## Multinomial Naive Bayes
+MultinomialNB is used in two ways for the analysis:
+- First, with CountVectorization, which is simple and effective for obtaining raw word counts but may overemphasize common words.
+- Then, with TF-IDF Vectorization, which offers a more refined feature representation by emphasizing rare but important words, making it generally more effective for text classification tasks.
+
 ## Model Selection
-Overall, the TriGram model exhibited the highest accuracy, highlighting the importance of capturing word sequences in sentiment analysis. Based on these results, the TriGram model was selected as the best-performing model. It will be used to predict sentiment on two random movie reviews.
+The Trigram model demonstrated the highest accuracy among the deep learning approaches, emphasizing the importance of capturing word sequences in sentiment analysis. As a result, the Trigram model was selected as the best-performing model and was used to predict sentiment in random movie reviews. In the machine learning approaches, MultinomialNB with TF-IDF outperformed the version using CountVectorizer.
 
 ## Predictions on Unseen Reviews
 Sentiment prediction is demonstrated on three example sentences using a trained model. The sentences are tokenized into integer sequences using the same tokenizer used during training. The best-trained model, utilizing a 3-gram approach, is loaded for prediction. Predictions are made on the tokenized sequences, resulting in probability scores for positive and negative sentiment classes. A threshold of 0.5 is applied to convert the probability scores into binary classes: values above the threshold are classified as positive sentiment (1), while values below or equal to the threshold are classified as negative sentiment (0).
